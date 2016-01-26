@@ -1,7 +1,9 @@
-.juo-pattern(@color: #555, @indent: 20%) {
+.juo-pattern(@color: #555, @indent: 25%) {
   background:
     linear-gradient(45deg, @color @indent, transparent @indent),
-    linear-gradient(-45deg, @color @indent, transparent @indent);
+    linear-gradient(-45deg, @color @indent, transparent @indent),
+    linear-gradient(45deg, transparent 100 - @indent, @color 100 - @indent) 5% 0,
+    linear-gradient(-45deg, transparent 100 - @indent, @color 100 - @indent) 5% 0;
   background-size: 10% auto;
   background-color: #fff;
 }
