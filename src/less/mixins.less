@@ -4,14 +4,14 @@
   box-sizing: @value;
 }
 
-.box-shadow(@value: 0 1px 3px 0 rgba(0, 0, 0, 0.2)) {
+.box-shadow(@value: 0 1px 3px 0 @shadow-color) {
   -webkit-box-shadow: @value;
   -moz-box-shadow: @value;
   box-shadow: @value;
 }
 
 .inset-box-shadow() {
-  .box-shadow(inset 0 1px 3px 0 rgba(0, 0, 0, 0.2));
+  .box-shadow(inset 0 1px 3px 0 @shadow-color);
 }
 
 .transform(@value) {
@@ -20,4 +20,12 @@
   -ms-transform: @value;
   -o-transform: @value;
   transform: @value;
+}
+
+.transform-origin(@value) {
+  -webkit-transform-origin: @value;
+  -moz-transform-origin: @value;
+  -ms-transform-origin: @value;
+  -o-transform-origin: @value;
+  transform-origin: @value;
 }
