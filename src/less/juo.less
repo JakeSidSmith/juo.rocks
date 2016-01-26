@@ -1,3 +1,11 @@
+.juo-pattern(@color: #555) {
+  background:
+    linear-gradient(45deg, @color 25%, transparent 25%),
+    linear-gradient(-45deg, @color 25%, transparent 25%);
+  background-size: 10% auto;
+  background-color: #fff;
+}
+
 .juo {
   position: relative;
   margin: 50px auto;
@@ -8,6 +16,7 @@
   border-radius: 60%;
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
+  .box-shadow();
 
   .left-eye,
   .right-eye {
@@ -29,6 +38,7 @@
     }
 
     &::before {
+      .box-shadow();
       width: 70%;
       height: 70%;
       margin: 15%;
@@ -66,5 +76,16 @@
     top: 35%;
     left: 50%;
     margin-left: -3%;
+  }
+
+  .belly {
+    .juo-pattern();
+    .inset-box-shadow();
+    position: absolute;
+    width: 80%;
+    height: 45%;
+    top: 50%;
+    left: 10%;
+    border-radius: 50%;
   }
 }

@@ -4,6 +4,16 @@
   box-sizing: @value;
 }
 
+.box-shadow(@value: 0 1px 3px 0 rgba(0, 0, 0, 0.2)) {
+  -webkit-box-shadow: @value;
+  -moz-box-shadow: @value;
+  box-shadow: @value;
+}
+
+.inset-box-shadow() {
+  .box-shadow(inset 0 1px 3px 0 rgba(0, 0, 0, 0.2));
+}
+
 .transform(@value) {
   -webkit-transform: @value;
   -moz-transform: @value;
