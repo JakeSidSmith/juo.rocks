@@ -15,4 +15,4 @@ script:
 
 after_success:
 - npm run build
-- bash scripts/deploy.bash
+- bash deploy.bash
