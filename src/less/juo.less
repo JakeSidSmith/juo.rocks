@@ -1,7 +1,7 @@
-.juo-pattern(@color: #555) {
+.juo-pattern(@color: #555, @indent: 20%) {
   background:
-    linear-gradient(45deg, @color 25%, transparent 25%),
-    linear-gradient(-45deg, @color 25%, transparent 25%);
+    linear-gradient(45deg, @color @indent, transparent @indent),
+    linear-gradient(-45deg, @color @indent, transparent @indent);
   background-size: 10% auto;
   background-color: #fff;
 }
@@ -29,29 +29,27 @@
     border-radius: 50%;
     left: 50%;
 
-    &::before,
-    &::after {
-      .box-sizing();
-      content: '';
+    .iris {
+      .box-shadow();
       position: absolute;
       border-radius: 50%;
-    }
-
-    &::before {
-      .box-shadow();
       width: 70%;
       height: 70%;
       margin: 15%;
       background-color: #33bbcc;
       z-index: 0;
-    }
 
-    &::after {
-      width: 48%;
-      height: 48%;
-      margin: 26%;
-      background-color: #333;
-      z-index: 1;
+      &::before {
+        .box-sizing();
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        width: 60%;
+        height: 60%;
+        margin: 20%;
+        background-color: #333;
+        z-index: 1;
+      }
     }
   }
 
@@ -68,6 +66,7 @@
   }
 
   .nose {
+    .box-shadow();
     position: absolute;
     width: 6%;
     height: 8%;
