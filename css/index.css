@@ -27,6 +27,9 @@ body {
   border-radius: 60%;
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
 }
 .juo .left-eye,
 .juo .right-eye {
@@ -52,6 +55,9 @@ body {
 }
 .juo .left-eye::before,
 .juo .right-eye::before {
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   width: 70%;
   height: 70%;
   margin: 15%;
@@ -93,4 +99,18 @@ body {
   top: 35%;
   left: 50%;
   margin-left: -3%;
+}
+.juo .belly {
+  background: linear-gradient(45deg, #555 25%, transparent 25%), linear-gradient(-45deg, #555 25%, transparent 25%);
+  background-size: 10% auto;
+  background-color: #fff;
+  -webkit-box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  width: 80%;
+  height: 45%;
+  top: 50%;
+  left: 10%;
+  border-radius: 50%;
 }
