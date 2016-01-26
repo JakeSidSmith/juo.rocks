@@ -1,0 +1,34 @@
+{
+  "name": "juo.rocks",
+  "version": "0.0.0",
+  "description": "Juo the snowy owl",
+  "main": "index.js",
+  "scripts": {
+    "build": "mkdir -p build/css && lessc src/less/index.less build/css/index.css",
+    "start": "http-server . -c-1 -o",
+    "test": "echo \"Awww, he's so cute!\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JakeSidSmith/juo.rocks.git"
+  },
+  "keywords": [
+    "juo",
+    "rocks",
+    "cute",
+    "owl"
+  ],
+  "author": "Jake 'Sid' Smith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JakeSidSmith/juo.rocks/issues"
+  },
+  "homepage": "https://github.com/JakeSidSmith/juo.rocks#readme",
+  "devDependencies": {
+    "http-server": "=0.8.5",
+    "watch": "=0.17.1"
+  },
+  "dependencies": {
+    "less": "=2.5.3"
+  }
+}
