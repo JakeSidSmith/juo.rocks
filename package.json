@@ -4,8 +4,10 @@
   "description": "Juo the snowy owl",
   "main": "index.js",
   "scripts": {
-    "build": "mkdir -p build/css && lessc src/less/index.less build/css/index.css",
-    "start": "http-server . -c-1 -o",
+    "build-css": "mkdir -p build/css && lessc src/less/index.less build/css/index.css",
+    "build-index": "mkdir -p build && cp src/index.html build/index.html",
+    "build": "npm run build-index && npm run build-css",
+    "start": "npm run build && http-server build -c-1 -o",
     "test": "echo \"Awww, he's so cute!\" && exit 0"
   },
   "repository": {
