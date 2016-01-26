@@ -42,33 +42,30 @@ body {
   border-radius: 50%;
   left: 50%;
 }
-.juo .left-eye::before,
-.juo .right-eye::before,
-.juo .left-eye::after,
-.juo .right-eye::after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-}
-.juo .left-eye::before,
-.juo .right-eye::before {
+.juo .left-eye .iris,
+.juo .right-eye .iris {
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  border-radius: 50%;
   width: 70%;
   height: 70%;
   margin: 15%;
   background-color: #33bbcc;
   z-index: 0;
 }
-.juo .left-eye::after,
-.juo .right-eye::after {
-  width: 48%;
-  height: 48%;
-  margin: 26%;
+.juo .left-eye .iris::before,
+.juo .right-eye .iris::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  width: 60%;
+  height: 60%;
+  margin: 20%;
   background-color: #333;
   z-index: 1;
 }
@@ -91,6 +88,9 @@ body {
   margin-left: 2%;
 }
 .juo .nose {
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   position: absolute;
   width: 6%;
   height: 8%;
@@ -101,7 +101,7 @@ body {
   margin-left: -3%;
 }
 .juo .belly {
-  background: linear-gradient(45deg, #555 25%, transparent 25%), linear-gradient(-45deg, #555 25%, transparent 25%);
+  background: linear-gradient(45deg, #555 20%, transparent 20%), linear-gradient(-45deg, #555 20%, transparent 20%);
   background-size: 10% auto;
   background-color: #fff;
   -webkit-box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.2);
