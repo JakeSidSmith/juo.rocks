@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build-css": "mkdir -p build/css && lessc src/less/index.less build/css/index.css && echo \"Less compiled\"",
-    "build-images": "mkdir -p build/img && cp -R src/img/ build/img/",
+    "build-images": "mkdir -p build/img && cp -R src/img build/",
     "build-index": "mkdir -p build && cp src/index.html build/index.html",
     "build": "npm run build-index && npm run build-images && npm run build-css",
     "watch": "watch \"npm run build-css\" src/less",
