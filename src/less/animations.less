@@ -1,61 +1,44 @@
-@-webkit-keyframes blink {
-  0% {
-    -webkit-transform: scale(1, 1);
+.blink(@percent, @prefix: ~'') {
+  @start: @percent + 0%;
+  @middle: @percent + 0.5%;
+  @end: @percent + 1%;
+
+  @{start} {
+    @{prefix}transform: scale(1, 1);
   }
 
-  20% {
-    -webkit-transform: scale(1, 1);
+  @{middle} {
+    @{prefix}transform: scale(1, 0);
   }
 
-  20.5% {
-    -webkit-transform: scale(1, 0);
-  }
-
-  21% {
-    -webkit-transform: scale(1, 1);
-  }
-
-  60% {
-    -webkit-transform: scale(1, 1);
-  }
-
-  60.5% {
-    -webkit-transform: scale(1, 0);
-  }
-
-  61% {
-    -webkit-transform: scale(1, 1);
-  }
-
-  63% {
-    -webkit-transform: scale(1, 1);
-  }
-
-  63.5% {
-    -webkit-transform: scale(1, 0);
-  }
-
-  64% {
-    -webkit-transform: scale(1, 1);
-  }
-
-  90% {
-    -webkit-transform: scale(1, 1);
-  }
-
-  90.5% {
-    -webkit-transform: scale(1, 0);
-  }
-
-  91% {
-    -webkit-transform: scale(1, 1);
+  @{end} {
+    @{prefix}transform: scale(1, 1);
   }
 }
 
+.blinks(@prefix: ~'') {
+  .blink(20, @prefix);
+  .blink(60, @prefix);
+  .blink(63, @prefix);
+  .blink(90, @prefix);
+}
+
+@-webkit-keyframes blink {
+  .blinks(-webkit-);
+}
+@-moz-keyframes blink {
+  .blinks(-moz-);
+}
+@-ms-keyframes blink {
+  .blinks(-ms-);
+}
+@-o-keyframes blink {
+  .blinks(-o-);
+}
+@keyframes blink {
+  .blinks();
+}
+
 .blink {
-  -webkit-animation: linear infinite blink 10s;
-  -moz-animation: linear infinite blink 10s;
-  -ms-animation: linear infinite blink 10s;
-  -o-animation: linear infinite blink 10s;
-  animation: linear infinite blink 10s;
+  .animation(linear infinite blink 10s;);
 }
