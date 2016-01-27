@@ -4,10 +4,13 @@
   "description": "Juo the snowy owl",
   "main": "index.js",
   "scripts": {
+    "build-custom-js": "cp src/js/index.js build/js/index.js",
+    "build-jquery": "cp node_modules/jquery/dist/jquery.min.js build/js/jquery.min.js",
+    "build-js": "mkdir -p build/js && npm run build-jquery && npm run build-custom-js",
     "build-css": "mkdir -p build/css && lessc src/less/index.less build/css/index.css && echo \"Less compiled\"",
     "build-images": "mkdir -p build/img && cp -R src/img build/",
     "build-index": "mkdir -p build && cp src/index.html build/index.html",
-    "build": "npm run build-index && npm run build-images && npm run build-css",
+    "build": "npm run build-index && npm run build-images && npm run build-css && npm run build-js",
     "watch": "watch \"npm run build-css\" src/less",
     "start": "npm run build && http-server build -c-1 -o",
     "test": "echo \"Awww, he's so cute!\" && exit 0"
