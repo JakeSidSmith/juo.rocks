@@ -6,11 +6,9 @@
   @{start} {
     @{prefix}transform: scale(1, 1);
   }
-
   @{middle} {
     @{prefix}transform: scale(1, 0);
   }
-
   @{end} {
     @{prefix}transform: scale(1, 1);
   }
@@ -41,4 +39,72 @@
 
 .blink {
   .animation(linear infinite blink 10s;);
+}
+
+.flap(@percent, @mult: 1, @prefix: ~'') {
+  @start: @percent + 0%;
+  @middle: @percent + 0.5%;
+  @end: @percent + 1%;
+
+  @{start} {
+    @{prefix}transform: rotate(60deg * @mult);
+  }
+  @{middle} {
+    @{prefix}transform: rotate(55deg * @mult);
+  }
+  @{end} {
+    @{prefix}transform: rotate(60deg * @mult);
+  }
+}
+
+.flaps(@multiplier: 1, @prefix: ~'') {
+  .flap(0, @multiplier);
+  .flap(1, @multiplier);
+  .flap(2, @multiplier);
+  .flap(40, @multiplier);
+  .flap(60, @multiplier);
+  .flap(61, @multiplier);
+  .flap(62, @multiplier);
+  .flap(70, @multiplier);
+  .flap(75, @multiplier);
+}
+
+@-webkit-keyframes flap-left {
+  .flaps(-1, -webkit-);
+}
+@-moz-keyframes flap-left {
+  .flaps(-1, -moz-);
+}
+@-ms-keyframes flap-left {
+  .flaps(-1, -ms-);
+}
+@-o-keyframes flap-left {
+  .flaps(-1, -o-);
+}
+@keyframes flap-left {
+  .flaps(-1);
+}
+
+@-webkit-keyframes flap-right {
+  .flaps(1, -webkit-);
+}
+@-moz-keyframes flap-right {
+  .flaps(1, -moz-);
+}
+@-ms-keyframes flap-right {
+  .flaps(1, -ms-);
+}
+@-o-keyframes flap-right {
+  .flaps(1, -o-);
+}
+@keyframes flap-right {
+  .flaps(1);
+}
+
+.flap.left {
+  .animation(linear infinite flap-left 20s;);
+}
+
+.flap.right {
+  .animation(linear infinite flap-right 20s;);
 }
