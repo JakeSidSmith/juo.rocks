@@ -33,6 +33,7 @@
     "watch": "=0.17.1"
   },
   "dependencies": {
+    "jquery": "=2.2.0",
     "less": "=2.5.3"
   }
 }
