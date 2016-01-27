@@ -32,11 +32,12 @@ h6 {
   font-weight: normal;
   letter-spacing: 0.1em;
 }
-.juo {
+.juo-container {
+  position: relative;
   margin: 10% auto 0 auto;
   max-width: 320px;
 }
-.juo .shadow {
+.juo-container .shadow {
   position: relative;
   width: 80%;
   margin-left: 10%;
@@ -52,50 +53,90 @@ h6 {
   -o-filter: blur(10px);
   filter: blur(10px);
 }
-.juo .body {
-  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+.juo-container .juo {
   position: relative;
-  background-color: #eee;
   margin-left: 10%;
   width: 80%;
   height: 0;
   padding-bottom: 105%;
+  z-index: 1;
+}
+.juo-container .body {
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  background-color: #eee;
+  width: 100%;
+  height: 100%;
   border-radius: 60%;
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
   z-index: 1;
 }
-.juo .body .eye {
+.juo-container .ear {
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #555 25%, transparent 25%), linear-gradient(-45deg, #555 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #555 75%) 8px 0, linear-gradient(-45deg, transparent 75%, #555 75%) 8px 0;
+  background-size: 16px 16px;
+  background-color: #fff;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  width: 20%;
+  height: 0;
+  padding-bottom: 20%;
+  border-radius: 20%;
+  z-index: 0;
+}
+.juo-container .ear.left {
+  margin-left: -30%;
+}
+.juo-container .ear.right {
+  margin-left: 10%;
+}
+.juo-container .eye {
   position: absolute;
   top: 20%;
   width: 35%;
   height: 0;
   padding-bottom: 35%;
+  left: 50%;
+  z-index: 2;
+}
+.juo-container .eye .eye-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: #ccc;
   border-radius: 50%;
-  left: 50%;
 }
-.juo .body .eye.left {
+.juo-container .eye.left {
+  margin-left: -37%;
+}
+.juo-container .eye.left .eye-shadow {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
   border-bottom-right-radius: 10%;
-  margin-left: -37%;
 }
-.juo .body .eye.right {
+.juo-container .eye.right {
+  margin-left: 2%;
+}
+.juo-container .eye.right .eye-shadow {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
   border-bottom-left-radius: 10%;
-  margin-left: 2%;
 }
-.juo .body .eye .iris {
+.juo-container .eye .iris {
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
@@ -107,7 +148,7 @@ h6 {
   background-color: #3bc;
   z-index: 0;
 }
-.juo .body .eye .iris::before {
+.juo-container .eye .iris::before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -120,7 +161,7 @@ h6 {
   background-color: #333;
   z-index: 1;
 }
-.juo .body .nose {
+.juo-container .nose {
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
@@ -132,8 +173,9 @@ h6 {
   top: 35%;
   left: 50%;
   margin-left: -3%;
+  z-index: 2;
 }
-.juo .body .arm {
+.juo-container .wing {
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
@@ -144,8 +186,9 @@ h6 {
   height: 0;
   padding-bottom: 15%;
   border-radius: 50%;
+  z-index: 2;
 }
-.juo .body .arm::before {
+.juo-container .wing::before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -161,7 +204,7 @@ h6 {
   width: 70%;
   height: 30%;
 }
-.juo .body .arm.left {
+.juo-container .wing.left {
   left: -25%;
   -webkit-transform-origin: 100% 50%;
   -moz-transform-origin: 100% 50%;
@@ -174,14 +217,14 @@ h6 {
   -o-transform: rotate(-60deg);
   transform: rotate(-60deg);
 }
-.juo .body .arm.left::before {
+.juo-container .wing.left::before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   top: 60%;
   left: 10%;
 }
-.juo .body .arm.right {
+.juo-container .wing.right {
   right: -25%;
   -webkit-transform-origin: 0 50%;
   -moz-transform-origin: 0 50%;
@@ -194,14 +237,14 @@ h6 {
   -o-transform: rotate(60deg);
   transform: rotate(60deg);
 }
-.juo .body .arm.right::before {
+.juo-container .wing.right::before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   top: 60%;
   right: 10%;
 }
-.juo .body .belly {
+.juo-container .belly {
   background: linear-gradient(45deg, #555 25%, transparent 25%), linear-gradient(-45deg, #555 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #555 75%) 8px 0, linear-gradient(-45deg, transparent 75%, #555 75%) 8px 0;
   background-size: 16px 16px;
   background-color: #fff;
@@ -214,8 +257,9 @@ h6 {
   top: 50%;
   left: 10%;
   border-radius: 50%;
+  z-index: 2;
 }
-.juo .body .leg {
+.juo-container .foot {
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
@@ -226,8 +270,9 @@ h6 {
   padding-bottom: 8%;
   background-color: #333;
   border-radius: 50%;
+  z-index: 2;
 }
-.juo .body .leg.left {
+.juo-container .foot.left {
   left: 18%;
   -webkit-transform-origin: 50% 0;
   -moz-transform-origin: 50% 0;
@@ -240,7 +285,7 @@ h6 {
   -o-transform: rotate(10deg);
   transform: rotate(10deg);
 }
-.juo .body .leg.right {
+.juo-container .foot.right {
   right: 18%;
   -webkit-transform-origin: 50% 0;
   -moz-transform-origin: 50% 0;
@@ -253,7 +298,10 @@ h6 {
   -o-transform: rotate(-10deg);
   transform: rotate(-10deg);
 }
-.juo .body .leg .toes {
+.juo-container .foot .toes {
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   position: absolute;
   left: 50%;
   bottom: -20%;
@@ -264,8 +312,11 @@ h6 {
   background-color: #404040;
   border-radius: 50%;
 }
-.juo .body .leg .toes::before,
-.juo .body .leg .toes::after {
+.juo-container .foot .toes::before,
+.juo-container .foot .toes::after {
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -282,7 +333,7 @@ h6 {
   -o-transform-origin: 50% 0;
   transform-origin: 50% 0;
 }
-.juo .body .leg .toes::before {
+.juo-container .foot .toes::before {
   left: -110%;
   -webkit-transform: rotate(10deg);
   -moz-transform: rotate(10deg);
@@ -290,7 +341,7 @@ h6 {
   -o-transform: rotate(10deg);
   transform: rotate(10deg);
 }
-.juo .body .leg .toes::after {
+.juo-container .foot .toes::after {
   right: -110%;
   -webkit-transform: rotate(-10deg);
   -moz-transform: rotate(-10deg);
