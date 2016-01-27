@@ -108,3 +108,53 @@
 .flap.right {
   .animation(linear infinite flap-right 20s;);
 }
+
+.wiggle(@percent, @prefix: ~'') {
+  @first: @percent + 0%;
+  @second: @percent + 0.25%;
+  @third: @percent + 0.75%;
+  @fourth: @percent + 1%;
+
+  @{first} {
+    @{prefix}transform: rotate(0);
+  }
+  @{second} {
+    @{prefix}transform: rotate(-0.5deg);
+  }
+  @{third} {
+    @{prefix}transform: rotate(0.5deg);
+  }
+  @{fourth} {
+    @{prefix}transform: rotate(0);
+  }
+}
+
+.wiggles(@prefix: ~'') {
+  .wiggle(0, @prefix);
+  .wiggle(40, @prefix);
+  .wiggle(50, @prefix);
+  .wiggle(51, @prefix);
+  .wiggle(52, @prefix);
+  .wiggle(70, @prefix);
+  .wiggle(71, @prefix);
+}
+
+@-webkit-keyframes wiggle {
+  .wiggles(-webkit-);
+}
+@-moz-keyframes wiggle {
+  .wiggles(-moz-);
+}
+@-ms-keyframes wiggle {
+  .wiggles(-ms-);
+}
+@-o-keyframes wiggle {
+  .wiggles(-o-);
+}
+@keyframes wiggle {
+  .wiggles();
+}
+
+.wiggle {
+  .animation(linear infinite wiggle 30s);
+}
