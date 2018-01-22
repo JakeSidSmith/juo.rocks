@@ -32,11 +32,11 @@
   },
   "homepage": "https://github.com/JakeSidSmith/juo.rocks#readme",
   "devDependencies": {
-    "http-server": "=0.8.5",
-    "watch": "=0.17.1"
+    "http-server": "0.8.5",
+    "watch": "0.17.1"
   },
   "dependencies": {
-    "jquery": "=2.2.0",
-    "less": "=2.5.3"
+    "jquery": "3.3.1",
+    "less": "2.5.3"
   }
 }
