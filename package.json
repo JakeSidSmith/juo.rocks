@@ -36,7 +36,7 @@
     "watch": "0.17.1"
   },
   "dependencies": {
-    "jquery": "3.3.1",
+    "jquery": "3.4.0",
     "less": "2.5.3"
   }
 }
